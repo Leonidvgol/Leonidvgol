@@ -42,7 +42,49 @@ mathVector normalize(mathVector &first) {
     return result;
 }
 
-int main()
-{
-    std::cout << "Hello World!\n";
+int main() {
+    float x, y, output;
+    mathVector result, first, second;
+    std::string operation;
+    std::cout << "Enter the desired operationd: add, substract, scale, length or normalize:" << std::endl;
+    std::cin >> operation;
+    if (operation == "add") {
+        std::cout << "Enter the coordinates of the first vector: ";
+        std::cin >> first.a.x >> first.a.y;
+        std::cout << "Enter the coordinates of the second vector: ";
+        std::cin >> second.a.x >> second.a.y;
+        result = add(first,second);
+        std::cout << "Result: " << "x = " << result.a.x << " y = " << result.a.y;
+    }
+    else if (operation == "substract") {
+        std::cout << "Enter the coordinates of the first vector: ";
+        std::cin >> first.a.x >> first.a.y;
+        std::cout << "Enter the coordinates of the second vector: ";
+        std::cin >> second.a.x >> second.a.y;
+        result = substract(first, second);
+        std::cout << "Result: " << "x = " << result.a.x << " y = " << result.a.y;
+    }
+    else if (operation == "scale") {
+        std::cout << "Enter the coordinates of the vector: ";
+        std::cin >> first.a.x >> first.a.y;
+        std::cout << "Enter the coordinates of the scalar: ";
+        std::cin >> x;
+        result = scale(first, x);
+        std::cout << "Result: " << "x = " << result.a.x << " y = " << result.a.y;
+    }
+    else if (operation == "length") {
+        std::cout << "Enter the coordinates of the vector: ";
+        std::cin >> first.a.x >> first.a.y;
+        output = length(first);
+        std::cout << "Result: length = " << output;
+    }
+    else if (operation == "normalize") {
+        std::cout << "Enter the coordinates of the vector: ";
+        std::cin >> first.a.x >> first.a.y;
+        result = normalize(first);
+        std::cout << "Result: " << "x = " << result.a.x << " y = " << result.a.y;
+    }
+    else {
+        std::cout << "Error";
+    }
 }
